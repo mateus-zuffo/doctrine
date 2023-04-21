@@ -1,11 +1,22 @@
 <?php
 
-namespace Alura\Doctrine\Entity;
+namespace Alura\Doctrine\Helper\Entity;
 
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Id;
+
+#[Entity]
 class Student{
-    public function __construct(        
-        public readonly int $id,
-        private string $nome,
+    #[Id] 
+    #[GeneratedValue] 
+    #[Column] 
+    public readonly int $id;
+
+    public function __construct(   
+        #[Column]
+        public readonly string $name,
     ){
 
     }
